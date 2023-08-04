@@ -122,7 +122,8 @@ fly scale vm shared-cpu-2x {appname} (To scale CPU)
 See [fly documentation](https://fly.io/docs/apps/scale-machine) for more guidance
 
 # Pushing Changes:
-1. Pls create a new branch for your work like feature/security-api's.
-2. Push your code in that branch
-3. Raise a Merge Request
-4. After that code will be merged in the main branch.
+1. Pls, create a new branch for your work like feature/security-api's.
+2. Push your code into that branch
+3. Take a pull from the main branch
+4. Raise a Merge Request
+5. After that code will be merged in the main branch
