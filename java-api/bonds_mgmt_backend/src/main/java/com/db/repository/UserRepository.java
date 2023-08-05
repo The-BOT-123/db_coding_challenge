@@ -1,8 +1,9 @@
-package com.example.demo.repository;
+package com.db.repository;
 
 
-import com.example.demo.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.db.model.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
     // You can define custom query methods here if needed

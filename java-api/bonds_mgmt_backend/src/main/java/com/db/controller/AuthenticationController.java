@@ -1,7 +1,8 @@
-package com.example.demo.controller;
+package com.db.controller;
 
-import com.example.demo.model.UserDetails;
-import com.example.demo.service.AuthenticationService;
+import com.db.model.UserDetails;
+import com.db.service.AuthenticationService;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
