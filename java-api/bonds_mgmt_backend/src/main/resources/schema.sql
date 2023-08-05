@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS usertable;
+CREATE TABLE usertable(
+id INT NOT NULL PRIMARY KEY,
+username VARCHAR(250) NOT NULL,
+password VARCHAR(250) NOT NULL
+);
