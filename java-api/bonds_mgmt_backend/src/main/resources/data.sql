@@ -1,8 +1,8 @@
-INSERT INTO users (name, role, email) VALUES ('Samarth', 'admin','samarthnaphade@gmail.com');
-INSERT INTO users (name, role, email) VALUES ('Rupanjali', 'admin','krupanjali73@gmail.com');
-INSERT INTO users (name, role, email) VALUES ('Sakshi Desai', 'admin','sakshidesai145@gmail.com');
-INSERT INTO users (name, role, email) VALUES ('Sakshi Shah', 'admin','sakshidshah24@gmail.com');
-INSERT INTO users (name, role, email) VALUES ('Samyak Jain', 'admin','2019ucp1420@mnit.ac.in');
+INSERT INTO users (name, role, email, password) VALUES ('Samarth', 'admin','samarthnaphade@gmail.com','samarth');
+INSERT INTO users (name, role, email, password) VALUES ('Rupanjali', 'admin','krupanjali73@gmail.com','rupanjali');
+INSERT INTO users (name, role, email, password) VALUES ('Sakshi Desai', 'admin','sakshidesai145@gmail.com','sakshi');
+INSERT INTO users (name, role, email, password) VALUES ('Sakshi Shah', 'admin','sakshidshah24@gmail.com','sakshi');
+INSERT INTO users (name, role, email, password) VALUES ('Samyak Jain', 'admin','2019ucp1420@mnit.ac.in','samyak');
 
 INSERT INTO books (book_name) VALUES ('test 1');
 INSERT INTO books (book_name) VALUES ('test 2');
