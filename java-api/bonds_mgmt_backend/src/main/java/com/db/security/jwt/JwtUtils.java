@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 import com.db.security.services.UserDetailsImpl;
 
 import io.jsonwebtoken.*;
+import com.db.model.UserData;
 
 @Component
 public class JwtUtils {
@@ -48,6 +49,7 @@ public class JwtUtils {
 		jwt_value.put("username", userPrincipal.getUsername());
 		jwt_value.put("email", userPrincipal.getEmail());
 		jwt_value.put("role", userPrincipal.getRole());
+		jwt_value.put("id", userPrincipal.getId());
 		return Jwts.builder().setClaims(jwt_value).setSubject((userPrincipal.getUsername())).setIssuedAt(new Date())
 				.setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
 				.signWith(SignatureAlgorithm.HS512, jwtSecret).compact();
@@ -63,6 +65,13 @@ public class JwtUtils {
 	
 	public String getRoleFromJWT(String token) {
 		return (String) Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody().get("role");
+	}
+	
+	public Integer getIdFromJWT(String token) {
+		return (Integer) Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody().get("id");
+	}
+	public UserData getUserData(String token) {
+		return new UserData(this.getIdFromJWT(token), this.getUserNameFromJwtToken(token), this.getEmailFromJWT(token), this.getRoleFromJWT(token));
 	}
 
 
