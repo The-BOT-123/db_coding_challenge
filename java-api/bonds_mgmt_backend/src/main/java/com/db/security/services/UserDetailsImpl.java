@@ -28,11 +28,11 @@ public class UserDetailsImpl implements UserDetails {
 		this.username = username;
 		this.email = email;
 		this.password = password;
+		this.role = role;
 
 	}
 
 	public static UserDetailsImpl build(User user) {
-
 		return new UserDetailsImpl(user.getId(), user.getUsername(), user.getEmail(), user.getPassword(), user.getRole());
 	}
 
