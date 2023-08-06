@@ -29,7 +29,14 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 	private UserDetailsServiceImpl userDetailsService;
 
 	private static final Logger logger = LoggerFactory.getLogger(AuthTokenFilter.class);
-
+	
+	@Override
+	protected boolean shouldNotFilter(HttpServletRequest request)
+	  throws ServletException {
+	    String path = request.getRequestURI();
+	    return path.contains("h2") || path.contains("api/auth/signin") || path.contains("/api/test/all");
+	}
+	
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
@@ -46,6 +53,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 				SecurityContextHolder.getContext().setAuthentication(authentication);
 			}else {
 				response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Error: Unauthorized");
+				System.out.println("Runned");
 				return;
 			}
 		} catch (Exception e) {
