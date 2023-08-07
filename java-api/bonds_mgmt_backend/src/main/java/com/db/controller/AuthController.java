@@ -44,23 +44,23 @@ public class AuthController {
 
 	@PostMapping("/signin")
 	public ResponseEntity<?> authenticateuser(@RequestBody LoginRequest loginRequest) {
-        System.out.println(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()).toString());
 		Authentication authentication = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
-        System.out.println(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()).toString());
 
 		SecurityContextHolder.getContext().setAuthentication(authentication);
-        System.out.println(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()).toString());
 		String jwt = jwtUtils.generateJwtToken(authentication);
 
 		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
-
 		return ResponseEntity
-				.ok(new JwtResponse(jwt, userDetails.getId(), userDetails.getUsername(), userDetails.getEmail()));
+				.ok(new JwtResponse(jwt, userDetails.getId(), userDetails.getUsername(), userDetails.getEmail(), userDetails.getRole()));
 	}
 
 	@PostMapping("/signup")	
-	public ResponseEntity<?> registerUser(@RequestBody SignupRequest signUpRequest) {		
+	public ResponseEntity<?> registerUser(@RequestBody SignupRequest signUpRequest, @RequestAttribute UserData user_data) {	
+		if(!user_data.getRole().equalsIgnoreCase("admin")) {
+			return ResponseEntity.status(401).body(new MessageResponse("Error: username not authorized for this request!"));
+		}
+		
 		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
 			return ResponseEntity.badRequest().body(new MessageResponse("Error: username is already taken!"));
 		}
