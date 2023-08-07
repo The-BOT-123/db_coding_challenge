@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS users (
+CREATE TABLE IF NOT EXISTS Users (
     id int NOT NULL AUTO_INCREMENT,
     username varchar(255) NOT NULL,
     role varchar(255) NOT NULL,
@@ -55,9 +55,9 @@ CREATE TABLE IF NOT EXISTS Trade (
    FOREIGN key
        (book_Id) REFERENCES Books (id),
    FOREIGN key
-       (Counter_party_Id) REFERENCES counterparty (id),
+       (Counter_party_Id) REFERENCES CounterParty (id),
    FOREIGN key
-       (Security_Id) REFERENCES security (id)
+       (Security_Id) REFERENCES Security (id)
 );
 
 
