@@ -1,8 +1,5 @@
-INSERT INTO users (name, role, email, password) VALUES ('Samarth', 'admin','samarthnaphade@gmail.com','samarth');
-INSERT INTO users (name, role, email, password) VALUES ('Rupanjali', 'admin','krupanjali73@gmail.com','rupanjali');
-INSERT INTO users (name, role, email, password) VALUES ('Sakshi Desai', 'admin','sakshidesai145@gmail.com','sakshi');
-INSERT INTO users (name, role, email, password) VALUES ('Sakshi Shah', 'admin','sakshidshah24@gmail.com','sakshi');
-INSERT INTO users (name, role, email, password) VALUES ('Samyak Jain', 'admin','2019ucp1420@mnit.ac.in','samyak');
+INSERT INTO users (id, username, role, email, password) VALUES (1, 'admin', 'admin','admin@gmail.com','$2a$10$rYc3NTOoXkuItSrEI9navekqajlJ.IS7ZfScu5xYLP..uwvcICvPi');
+INSERT INTO users (id, username, role, email, password) VALUES (2, 'user', 'user','user@gmail.com','$2a$10$6Oxx8CREBurd.JZ0KK8mW.hcmZsaCjyC7h/xD4v1z2s1Z5PqeXiMW');
 
 INSERT INTO books (book_name) VALUES ('test 1');
 INSERT INTO books (book_name) VALUES ('test 2');
@@ -10,7 +7,6 @@ INSERT INTO books (book_name) VALUES ('test 3');
 
 INSERT INTO bookUsers (book_id, user_id) VALUES (1,1);
 INSERT INTO bookUsers (book_id, user_id) VALUES (2,2);
-INSERT INTO bookUsers (book_id, user_id) VALUES (3,3);
 
 INSERT INTO counterparty (name) VALUES ('DB');
 INSERT INTO counterparty (name) VALUES ('CITI');
