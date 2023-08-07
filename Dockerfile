@@ -11,4 +11,5 @@ RUN mvn -f /home/app/java-api/pom.xml clean package
 FROM openjdk:17.0.1-jdk-slim
 COPY --from=build /home/app/java-api/target/bonds_mgmt_backend-0.0.1-SNAPSHOT.jar /usr/local/lib/WebApp.jar
 EXPOSE 8080 
+EXPOSE 6681 
 ENTRYPOINT ["java", "-jar", "/usr/local/lib/WebApp.jar","--spring.profiles.active=prod"]
