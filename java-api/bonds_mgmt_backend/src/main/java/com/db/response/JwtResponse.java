@@ -57,7 +57,7 @@ public class JwtResponse {
 	}
 
 	public String getRole() {
-		return username;
+		return role;
 	}
 
 	public void setRole(String role) {
