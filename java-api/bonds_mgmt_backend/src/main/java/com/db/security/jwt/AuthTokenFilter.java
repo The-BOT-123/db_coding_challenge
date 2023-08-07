@@ -53,7 +53,6 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 				SecurityContextHolder.getContext().setAuthentication(authentication);
 			}else {
 				response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Error: Unauthorized");
-				System.out.println("Runned");
 				return;
 			}
 		} catch (Exception e) {
