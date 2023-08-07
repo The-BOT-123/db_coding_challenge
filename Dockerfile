@@ -3,6 +3,8 @@
 #
 FROM maven:3.8.3-openjdk-17 AS build
 COPY java-api/bonds_mgmt_backend /home/app/java-api/
+RUN rm -frv /home/app/java-api/src/main/resources/data.sql
+RUN rm -frv /home/app/java-api/src/main/resources/schema.sql
 RUN mvn -f /home/app/java-api/pom.xml clean package
 
 #
