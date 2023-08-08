@@ -5,8 +5,8 @@ INSERT INTO books (book_name) VALUES ('test 1');
 INSERT INTO books (book_name) VALUES ('test 2');
 INSERT INTO books (book_name) VALUES ('test 3');
 
-INSERT INTO bookusers (book_id, user_id) VALUES (1,1);
-INSERT INTO bookusers (book_id, user_id) VALUES (2,2);
+INSERT INTO bookusers (id, book_id, user_id) VALUES (1,1,1);
+INSERT INTO bookusers (id, book_id, user_id) VALUES (2,2,2);
 
 INSERT INTO counterparty (name) VALUES ('DB');
 INSERT INTO counterparty (name) VALUES ('CITI');

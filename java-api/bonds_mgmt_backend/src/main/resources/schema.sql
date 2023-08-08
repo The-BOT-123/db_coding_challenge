@@ -31,8 +31,10 @@ CREATE TABLE IF NOT EXISTS counterparty (
 );
 
 CREATE TABLE IF NOT EXISTS bookusers (
+	id INT NOT NULL AUTO_INCREMENT,
     book_id INT NOT NULL,
     user_id BIGINT NOT NULL,
+    PRIMARY KEY (id),
     FOREIGN key
         (book_id) REFERENCES books (id),
     FOREIGN key
