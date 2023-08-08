@@ -1,23 +1,25 @@
 import axios from "axios";
 
-const url = "";
+const url = "https://bondtracker.up.railway.app/api";
 
-export const fetchTrades = () => {
-    axios.get(url);
+export const fetchTrades = async() => {
+    const res = await axios.get(url + `/trade`);
+    return res.data;
 }
 
-export const fetchTradesById = (id) => {
-    axios.get(`${url}/${id}`);
+export const fetchTradesById = async(id) => {
+    const res = await axios.get(`${url}/trade/${id}`);
+    return res.data;
 }
 
-export const fetchTradesBySecurity = (secuirtyId) => {
-    axios.get(`${url}/${secuirtyId}`);
-}
+// export const fetchTradesBySecurity = (securityId) => {
+//     axios.get(`${url}/${securityId}`);
+// }
 
-export const createTrade = (newTrade) => {
-    axios.post(url, newTrade);
-}
+// export const createTrade = (newTrade) => {
+//     axios.post(url, newTrade);
+// }
 
-export const updateTrade = (id, updatedTrade) => {
-    axios.patch(`${url}/${id}`, updatedTrade);
-}
+// export const updateTrade = (id, updatedTrade) => {
+//     axios.patch(`${url}/${id}`, updatedTrade);
+// }
