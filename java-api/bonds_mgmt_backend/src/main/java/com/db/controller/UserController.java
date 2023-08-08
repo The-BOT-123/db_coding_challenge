@@ -1,7 +1,5 @@
 package com.db.controller;
 
-import java.util.List;
-
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.db.response.MessageResponse;
-import com.db.model.Book;
 import com.db.model.UserData;
 
 @CrossOrigin(origins = "*", maxAge = 4800)
@@ -32,11 +29,6 @@ public class UserController {
 	public MessageResponse userAccess(@RequestAttribute UserData user_data) {	
 		
 		return new MessageResponse("Congratulations! You are an authenticated user." + " " + user_data.getEmail() + " " + user_data.getUsername());
-	}
-	
-	@GetMapping("/books")
-	public MessageResponse getBooks(@RequestAttribute UserData user_data) {
-		return new MessageResponse("Congratulations! These are books");
 	}
 
 }
